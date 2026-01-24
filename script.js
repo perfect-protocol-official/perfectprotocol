@@ -1,0 +1,118 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Splash Screen Handling ---
+    const splashScreen = document.getElementById('splash-screen');
+    const body = document.body;
+
+    if (splashScreen) {
+        body.classList.add('loading');
+
+        // Wait for the animation + small delay before hiding
+        setTimeout(() => {
+            splashScreen.classList.add('fade-out');
+            body.classList.remove('loading');
+        }, 2500); // 2.5 seconds total display time
+    }
+
+    // --- Mobile Menu Toggle ---
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+
+    // --- Smooth Scrolling ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    if (hamburger) hamburger.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    // --- Netlify Form Submission ---
+    const bookingForm = document.getElementById('bookingForm');
+    const successOverlay = document.getElementById('success-overlay');
+    const submitBtn = bookingForm ? bookingForm.querySelector('button[type="submit"]') : null;
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Loading State on Button
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending...';
+                submitBtn.style.opacity = '0.7';
+            }
+
+            const formData = new FormData(bookingForm);
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+                .then(() => {
+                    // Show Success Overlay
+                    if (successOverlay) {
+                        successOverlay.classList.add('active');
+
+                        // After 4.5 seconds, hide overlay, reset form and scroll to top
+                        setTimeout(() => {
+                            if (successOverlay) successOverlay.classList.remove('active');
+                            if (bookingForm) bookingForm.reset();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                            // Reset Button
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Submit Request';
+                                submitBtn.style.opacity = '1';
+                            }
+                        }, 4500);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Error. Try Again';
+                        submitBtn.style.opacity = '1';
+                    }
+                });
+        });
+    }
+
+    // --- Team Slideshow (Simple Auto-Play) ---
+    const teamSlides = document.querySelectorAll('.team-simple-slide');
+    let currentTeamSlide = 0;
+    const teamIntervalTime = 3000; // 3 seconds per slide
+
+    if (teamSlides.length > 0) {
+        setInterval(() => {
+            // Remove active from current
+            teamSlides[currentTeamSlide].classList.remove('active');
+
+            // Move to next
+            currentTeamSlide = (currentTeamSlide + 1) % teamSlides.length;
+
+            // Add active to next
+            teamSlides[currentTeamSlide].classList.add('active');
+        }, teamIntervalTime);
+    }
+
+});
