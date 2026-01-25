@@ -923,16 +923,44 @@ textarea:focus {
 
     /* Mobile Services */
     .services-grid {
-        grid-template-columns: 1fr;
-        /* Single column on very small screens or 2? Let's go 1 for premium feel on narrow phones */
-        gap: 20px;
-        padding: 0 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 5px;
     }
 
-    @media (min-width: 480px) {
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    /* Mobile Clients (Testimonials) */
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+        /* Smaller padding for small cards */
+    }
+
+    .client-quote {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .quote-icon {
+        font-size: 2rem;
+        top: 10px;
+        left: 10px;
+    }
+
+    .client-stars {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .client-info h4 {
+        font-size: 0.95rem;
+    }
+
+    .client-info p {
+        font-size: 0.75rem;
     }
 
     .service-card {
