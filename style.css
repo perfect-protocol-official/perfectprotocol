@@ -1028,9 +1028,10 @@ textarea:focus {
         padding: 0;
     }
 
-    /* Mobile Background (Custom Image) */
+    /* Mobile Background (PC Image Adapted) */
     .bg-marble {
-        background-image: url('assets/mobile-bg.jpg') !important;
+        background-image: url('assets/bg-marble.png') !important;
+        /* Reuse PC Asset */
         background-color: #000;
         background-size: cover;
         background-position: center;
