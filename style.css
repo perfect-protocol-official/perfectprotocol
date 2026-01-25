@@ -47,6 +47,7 @@ body.loading {
 }
 
 /* Splash Screen Styles */
+/* Splash Screen Styles */
 #splash-screen {
     position: fixed;
     top: 0;
@@ -58,66 +59,42 @@ body.loading {
     justify-content: center;
     align-items: center;
     z-index: 10000;
+    /* Ultra-smooth fade out */
     transition: opacity 1.5s cubic-bezier(0.19, 1, 0.22, 1),
         visibility 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .splash-content {
     text-align: center;
-    /* Removed entry animation for wrapper to let children handle it */
+    /* Soft entrance */
+    animation: splash-entry 2.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 .splash-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    /* Space between lines and text */
-}
-
-/* Decorative Lines */
-.splash-line {
-    width: 0%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.6);
-    animation: line-expand 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    /* Simple wrapper */
+    display: block;
 }
 
 .splash-text {
     font-size: 2.22rem;
     letter-spacing: 0.6rem;
     font-weight: 300;
+    /* Lighter weight for premium feel */
     color: #fff;
     text-transform: uppercase;
-    /* Initial state */
+    /* Initial state for writing animation */
     clip-path: inset(0 100% 0 0);
-    opacity: 0;
-    animation: writing-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+    animation: writing-reveal 2.2s cubic-bezier(0.19, 1, 0.22, 1) 0.8s forwards;
 }
 
-@keyframes line-expand {
-    from {
-        width: 0%;
-        opacity: 0;
-    }
-
-    to {
-        width: 140px;
-        /* Elegant fixed width */
-        opacity: 1;
-    }
-}
-
-@keyframes writing-reveal {
+@keyframes splash-entry {
     0% {
-        clip-path: inset(0 100% 0 0);
-        letter-spacing: 0.2rem;
+        transform: scale(0.95);
         opacity: 0;
     }
 
     100% {
-        clip-path: inset(0 0 0 0);
-        letter-spacing: 0.6rem;
+        transform: scale(1);
         opacity: 1;
     }
 }
@@ -139,6 +116,8 @@ body.loading {
         opacity: 1;
     }
 }
+
+
 
 h1,
 h2,
