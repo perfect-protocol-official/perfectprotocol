@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Wait for the animation + small delay before hiding
         setTimeout(() => {
-            splashScreen.classList.add('fade-out');
             body.classList.remove('loading');
-        }, 2500); // 2.5 seconds total display time
+        }, 3500); // 3.5 seconds to accommodate new animation
     }
 
     // --- Mobile Menu Toggle ---
