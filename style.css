@@ -267,11 +267,16 @@ img {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-glass-border);
-    padding: 10px 0;
+    padding: 5px 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navbar.nav-hidden {
+    transform: translateY(-100%);
 }
 
 #navbar .logo img {
-    height: 90px;
+    height: 70px;
     width: auto;
     transition: transform 0.3s ease;
     opacity: 0.85;
@@ -566,17 +571,14 @@ img {
 /* Services Section (Square Grid) */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
-    aspect-ratio: 1 / 1;
-    background: var(--color-glass);
-    border: 1px solid var(--color-glass-border);
-    padding: 40px;
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -623,8 +625,8 @@ img {
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
     position: relative;
     z-index: 2;
 }
@@ -811,14 +813,14 @@ textarea:focus {
 /* Footer */
 #footer {
     background: #000;
-    padding: 80px 0 30px;
+    padding: 40px 0 20px;
     border-top: 1px solid #222;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .footer-logo-seamless {
-    height: 60px;
-    margin-bottom: 20px;
+    height: 45px;
+    margin-bottom: 15px;
     mix-blend-mode: screen;
     opacity: 0.85;
     filter: brightness(1.2);
@@ -833,8 +835,8 @@ textarea:focus {
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 50px;
-    margin-bottom: 50px;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .footer-links li {
@@ -849,36 +851,98 @@ textarea:focus {
 .footer-bottom {
     text-align: center;
     border-top: 1px solid #222;
-    padding-top: 30px;
+    padding-top: 20px;
     color: #555;
+    font-size: 0.85rem;
 }
 
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .hero-section {
-        height: auto;
-        padding: 100px 0 60px;
-    }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .team-carousel-wrapper {
-        width: 100%;
-        height: 300px;
-    }
-
-    .team-names-row {
+    /* Mobile Navigation */
+    .nav-links {
         display: none;
-        /* Simplify on mobile if needed, or swipe only */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+        text-align: center;
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid var(--color-glass-border);
     }
 
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        filter: invert(1);
+        cursor: pointer;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Hero */
+    .hero-section {
+        height: 85vh;
+        /* Taller on mobile for impact */
+        padding: 0;
+        margin-top: 60px;
+        /* Thinner nav offset */
+    }
+
+    .hero-content-box {
+        padding: 30px 20px;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+    .hero-content-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Mobile Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens or 2? Let's go 1 for premium feel on narrow phones */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    @media (min-width: 480px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .service-card {
+        padding: 30px 15px;
+    }
+
+    /* Mobile Booking Form */
+    .booking-form {
+        padding: 30px 20px;
     }
 
     .form-row {
@@ -886,14 +950,45 @@ textarea:focus {
         gap: 0;
     }
 
-    .nav-links {
-        display: none;
+    .form-group {
+        margin-bottom: 25px;
+        /* More space for touch */
     }
 
-    /* Add mobile menu logic if needed */
-    .hamburger {
-        display: block;
-        filter: invert(1);
+    /* Mobile Footer */
+    #footer {
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        padding: 0;
+    }
+
+    /* Section Padding for Mobile */
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    .section-title-text {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
     }
 }
 

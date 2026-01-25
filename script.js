@@ -97,6 +97,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Smart Navbar (Hide on Scroll Down) ---
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 50; // Minimum scroll to trigger hide/show
+
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Don't do anything for very small scrolls
+            if (Math.abs(currentScrollY - lastScrollY) < 5) return;
+
+            if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+                // Scrolling Down - Hide
+                navbar.classList.add('nav-hidden');
+            } else {
+                // Scrolling Up - Show
+                navbar.classList.remove('nav-hidden');
+            }
+
+            // Always show at the very top
+            if (currentScrollY <= 0) {
+                navbar.classList.remove('nav-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    }
+
     // --- Team Slideshow (Simple Auto-Play) ---
     const teamSlides = document.querySelectorAll('.team-simple-slide');
     let currentTeamSlide = 0;
