@@ -921,46 +921,70 @@ textarea:focus {
         margin-bottom: 30px;
     }
 
-    /* Mobile Services */
+    /* Mobile Services (3 Columns) */
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
         padding: 0 5px;
     }
 
-    /* Mobile Clients (Testimonials) */
-    .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    .service-card {
+        padding: 15px 5px;
     }
 
-    .testimonial-card {
-        padding: 15px;
-        /* Smaller padding for small cards */
-    }
-
-    .client-quote {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-
-    .quote-icon {
-        font-size: 2rem;
-        top: 10px;
-        left: 10px;
-    }
-
-    .client-stars {
-        font-size: 0.9rem;
+    .service-card h3 {
+        font-size: 0.75rem;
         margin-bottom: 5px;
     }
 
+    .service-card p {
+        font-size: 0.6rem;
+        line-height: 1.2;
+    }
+
+    .service-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Mobile Clients (3 Columns) */
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .testimonial-card {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .client-quote {
+        font-size: 0.65rem;
+        margin-bottom: 5px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .quote-icon {
+        font-size: 1.2rem;
+        top: 5px;
+        left: 5px;
+    }
+
+    .client-stars {
+        font-size: 0.7rem;
+        margin-bottom: 3px;
+    }
+
     .client-info h4 {
-        font-size: 0.95rem;
+        font-size: 0.7rem;
+        margin-bottom: 2px;
     }
 
     .client-info p {
-        font-size: 0.75rem;
+        font-size: 0.55rem;
     }
 
     .service-card {
@@ -1005,9 +1029,17 @@ textarea:focus {
     }
 
     /* Mobile Background Fix */
+    /* Mobile Background Replacement (Gradient) */
     .bg-marble {
+        background-image: none;
+        background-color: #0a0a0a;
+        background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000000 100%);
         background-attachment: scroll;
-        background-position: center center;
+        height: 100vh;
+    }
+
+    .bg-marble::after {
+        opacity: 0.5;
     }
 
     /* Section Padding for Mobile */
