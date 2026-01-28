@@ -52,7 +52,7 @@ body.loading {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #000;
     display: flex;
@@ -940,7 +940,7 @@ textarea:focus {
 
     /* Mobile Services (3 Columns) */
     .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 8px;
         padding: 0 5px;
     }
@@ -966,7 +966,7 @@ textarea:focus {
 
     /* Mobile Clients (3 Columns) */
     .testimonial-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 6px;
     }
 
@@ -980,6 +980,7 @@ textarea:focus {
         margin-bottom: 5px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
