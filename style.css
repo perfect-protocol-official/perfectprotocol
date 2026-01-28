@@ -384,22 +384,8 @@ img {
 }
 
 /* Smooth transition gradient from hero to marble */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            /* Reduced from 1 */
-            rgba(0, 0, 0, 0.4) 30%,
-            rgba(0, 0, 0, 0.2) 60%,
-            rgba(0, 0, 0, 0) 100%);
-    z-index: 2;
-    pointer-events: none;
-}
+/* Smooth transition gradient removed to prevent hard line */
+/* .hero-section::after removed */
 
 /* Hero Slideshow */
 
@@ -410,10 +396,11 @@ img {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.2) 0%,
-            rgba(0, 0, 0, 0.3) 60%,
-            rgba(0, 0, 0, 0.5) 85%,
-            rgba(0, 0, 0, 0.6) 100%);
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.1) 80%,
+            rgba(0, 0, 0, 0) 100%);
+    /* Fade to complete transparent */
     /* Gradient overlay for smooth transition to marble */
     z-index: 1;
 }
