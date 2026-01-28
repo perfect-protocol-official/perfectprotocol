@@ -379,7 +379,8 @@ img {
     overflow: hidden;
     margin-top: 80px;
     /* Nav offset */
-    background: url('assets/hero-bg-combined.png') no-repeat center center/cover;
+    /* background: url('assets/hero-bg-combined.png') no-repeat center center/cover; */
+    background: transparent;
 }
 
 /* Smooth transition gradient from hero to marble */
