@@ -684,17 +684,17 @@ img {
 /* Testimonials */
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .testimonial-card {
     background: var(--color-glass);
-    padding: 40px;
+    padding: 25px;
     border: 1px solid var(--color-glass-border);
     position: relative;
-    border-radius: 20px;
-    /* Smooth edges */
+    border-radius: 12px;
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
@@ -703,39 +703,7 @@ img {
     border-color: #fff;
 }
 
-.quote-icon {
-    font-size: 4rem;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    opacity: 0.2;
-    font-family: 'Playfair Display', serif;
-    /* Elegant font */
-}
 
-.client-quote {
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.client-quote {
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.client-stars {
-    color: #cca43b;
-    /* Gold color */
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
 
 .client-info h4 {
     font-size: 1.3rem;
