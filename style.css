@@ -103,6 +103,31 @@ body.loading {
     animation: writing-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
 }
 
+.splash-subtext {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    font-style: italic;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: subtext-fade-up 1.5s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
+}
+
+@keyframes subtext-fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes line-expand {
     from {
         width: 0%;
