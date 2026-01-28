@@ -931,9 +931,9 @@ textarea:focus {
         margin-bottom: 30px;
     }
 
-    /* Mobile Services (3 Columns) */
+    /* Mobile Services (2 Columns) */
     .services-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         padding: 0 5px;
     }
