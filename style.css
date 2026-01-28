@@ -105,15 +105,15 @@ body.loading {
 
 .splash-subtext {
     font-family: 'Playfair Display', serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     letter-spacing: 0.3rem;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    font-style: italic;
+    font-style: normal;
     margin-top: 15px;
+    clip-path: inset(0 100% 0 0);
     opacity: 0;
-    transform: translateY(10px);
-    animation: subtext-fade-up 1.5s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
+    animation: writing-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
 }
 
 @keyframes subtext-fade-up {
