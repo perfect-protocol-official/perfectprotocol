@@ -1099,6 +1099,40 @@ textarea:focus {
     .section-subtitle {
         font-size: 1.1rem;
     }
+
+    /* About Us Mobile Optimization */
+    .about-content {
+        padding: 0 10px;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* About Us Section Base Styles */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Premium Marble Background */
