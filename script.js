@@ -165,15 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalIconContainer.innerHTML = iconHTML;
 
                 // Show Modal
+                // Prevent background scrolling while maintaining position
+                const scrollY = window.scrollY;
+                document.body.style.top = `-${scrollY}px`;
+                document.body.classList.add('no-scroll');
                 modalOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
             });
         });
 
         // Close Modal Function
         const closeModal = () => {
+            const scrollY = document.body.style.top;
             modalOverlay.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.classList.remove('no-scroll');
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         };
 
         // Close on Button Click

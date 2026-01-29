@@ -46,6 +46,15 @@ body.loading {
     overflow: hidden;
 }
 
+/* Utility Class to Prevent Mobile Scrolling */
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed;
+    /* Lock position on iOS */
+    width: 100%;
+}
+
 /* Splash Screen Styles */
 /* Splash Screen Styles */
 #splash-screen {
