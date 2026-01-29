@@ -143,4 +143,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }, teamIntervalTime);
     }
 
+
+    // --- Service Description Modal ---
+    const serviceCards = document.querySelectorAll('.service-card');
+    const modalOverlay = document.getElementById('service-modal');
+    const modalCloseBtn = document.getElementById('modal-close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalIconContainer = document.getElementById('modal-icon-container');
+
+    if (modalOverlay) {
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent;
+                const description = card.getAttribute('data-description');
+                const iconHTML = card.querySelector('.service-icon').innerHTML;
+
+                // Populate Modal
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                modalIconContainer.innerHTML = iconHTML;
+
+                // Show Modal
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close Modal Function
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        // Close on Button Click
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        // Close on Overlay Click (Outside Box)
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape Key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
 });
