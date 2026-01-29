@@ -893,13 +893,17 @@ textarea:focus {
     }
 
     .nav-links a {
-        font-size: 0.65rem;
-        letter-spacing: 0.5px;
+        font-size: 0.60rem;
+        /* Slightly smaller */
+        letter-spacing: 0.3px;
+        padding: 5px;
     }
 
     .btn-nav {
         padding: 4px 8px;
-        font-size: 0.65rem;
+        font-size: 0.60rem;
+        white-space: nowrap;
+        /* Prevent line break */
     }
 
     /* Mobile Hero */
