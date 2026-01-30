@@ -17,7 +17,59 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=3.2">
+    <link rel="stylesheet" href="style.css?v=4.0">
+
+    <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
+    <style>
+        @media (max-width: 768px) {
+
+            /* 1. Force Splash Logo Center & Size */
+            .splash-logo {
+                width: 170px !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+
+            .splash-text-wrapper {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+
+            /* 2. Force Service Modal Size */
+            #service-modal .modal-content {
+                width: 85% !important;
+                padding: 20px !important;
+                max-height: 80vh !important;
+            }
+
+            #service-modal #modal-title {
+                font-size: 1.3rem !important;
+                margin-top: 10px !important;
+            }
+
+            #service-modal #modal-description {
+                font-size: 0.85rem !important;
+            }
+
+            #service-modal .modal-icon svg {
+                width: 45px !important;
+                height: 45px !important;
+            }
+
+            /* 3. Force Side-by-Side Highlights */
+            .slideshow-wrapper {
+                flex-wrap: nowrap !important;
+                gap: 5px !important;
+            }
+
+            .team-slideshow-container {
+                width: 49% !important;
+                height: 220px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
