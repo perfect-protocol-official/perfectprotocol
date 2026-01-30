@@ -228,6 +228,12 @@
                 font-size: 0.9rem !important;
             }
 
+            .testimonial-card h4.long-name {
+                font-size: 0.7rem !important;
+                /* Smaller for long names on mobile */
+                line-height: 1.2 !important;
+            }
+
             .testimonial-card p {
                 font-size: 0.7rem !important;
             }
@@ -242,6 +248,11 @@
         @media (min-width: 992px) {
             .testimonial-grid {
                 grid-template-columns: repeat(4, 1fr) !important;
+            }
+
+            .testimonial-card h4.long-name {
+                font-size: 1.1rem !important;
+                /* Slightly smaller for PC */
             }
         }
     </style>
@@ -670,7 +681,7 @@
                     <!-- 13. Infinity & Nissan Jordan -->
                     <div class="testimonial-card">
                         <div class="client-info">
-                            <h4>Infinity & Nissan Jordan</h4>
+                            <h4 class="long-name">Infinity & Nissan Jordan</h4>
                             <p>Automotive</p>
                         </div>
                     </div>
