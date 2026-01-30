@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=6.3">
+    <link rel="stylesheet" href="style.css?v=6.4">
 
     <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
     <style>
@@ -164,77 +164,78 @@
                 gap: 5px !important;
             }
 
-            width: 49% !important;
-            height: 220px !important;
-        }
+            .team-slideshow-container {
+                width: 49% !important;
+                height: 220px !important;
+            }
 
-        /* 4. Fix Navigation Flow */
-        .nav-links {
-            flex-wrap: wrap !important;
-            /* Allow two rows */
-            justify-content: center !important;
-            padding-top: 5px !important;
-            gap: 5px !important;
-        }
+            /* 4. Fix Navigation Flow */
+            .nav-links {
+                flex-wrap: wrap !important;
+                /* Allow two rows */
+                justify-content: center !important;
+                padding-top: 5px !important;
+                gap: 5px !important;
+            }
 
-        .nav-links li {
-            margin: 0 !important;
-        }
+            .nav-links li {
+                margin: 0 !important;
+            }
 
-        .nav-links a {
-            font-size: 0.65rem !important;
-            /* Readable but small */
-            padding: 4px 6px !important;
-        }
+            .nav-links a {
+                font-size: 0.65rem !important;
+                /* Readable but small */
+                padding: 4px 6px !important;
+            }
 
-        /* Make "Book Now" stand out but fit */
-        .btn-nav {
-            font-size: 0.65rem !important;
-            padding: 4px 10px !important;
-            margin-left: 0 !important;
-        }
+            /* Make "Book Now" stand out but fit */
+            .btn-nav {
+                font-size: 0.65rem !important;
+                padding: 4px 10px !important;
+                margin-left: 0 !important;
+            }
 
-        /* 6. Interaction Fixes (No Lag, No Jump) */
-        .service-card {
-            touch-action: manipulation !important;
-            /* Removes 300ms delay */
-            cursor: pointer !important;
-            -webkit-tap-highlight-color: transparent !important;
-        }
+            /* 6. Interaction Fixes (No Lag, No Jump) */
+            .service-card {
+                touch-action: manipulation !important;
+                /* Removes 300ms delay */
+                cursor: pointer !important;
+                -webkit-tap-highlight-color: transparent !important;
+            }
 
-        /* Splash Text Mobile */
-        .splash-text {
-            font-size: 1.5rem !important;
-            letter-spacing: 0.2rem !important;
-        }
+            /* Splash Text Mobile */
+            .splash-text {
+                font-size: 1.5rem !important;
+                letter-spacing: 0.2rem !important;
+            }
 
-        .splash-subtext {
-            font-size: 1.1rem !important;
-            letter-spacing: 0.1rem !important;
-        }
+            .splash-subtext {
+                font-size: 1.1rem !important;
+                letter-spacing: 0.1rem !important;
+            }
 
-        /* 4. Top Clients Grid - Mobile Optimization (2 Columns) */
-        .testimonial-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 10px !important;
-        }
+            /* 4. Top Clients Grid - Mobile Optimization (2 Columns) */
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
 
-        .testimonial-card {
-            padding: 15px 10px !important;
-        }
+            .testimonial-card {
+                padding: 15px 10px !important;
+            }
 
-        .testimonial-card h4 {
-            font-size: 0.9rem !important;
-        }
+            .testimonial-card h4 {
+                font-size: 0.9rem !important;
+            }
 
-        .testimonial-card p {
-            font-size: 0.7rem !important;
-        }
+            .testimonial-card p {
+                font-size: 0.7rem !important;
+            }
 
-        body.no-scroll {
-            overflow: hidden !important;
-            /* Just freeze scroll, don't jump */
-        }
+            body.no-scroll {
+                overflow: hidden !important;
+                /* Just freeze scroll, don't jump */
+            }
         }
 
         /* Desktop Grid Override (4 Columns) */
