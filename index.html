@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=6.2">
+    <link rel="stylesheet" href="style.css?v=6.3">
 
     <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
     <style>
@@ -213,10 +213,35 @@
             letter-spacing: 0.1rem !important;
         }
 
+        /* 4. Top Clients Grid - Mobile Optimization (2 Columns) */
+        .testimonial-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+        }
+
+        .testimonial-card {
+            padding: 15px 10px !important;
+        }
+
+        .testimonial-card h4 {
+            font-size: 0.9rem !important;
+        }
+
+        .testimonial-card p {
+            font-size: 0.7rem !important;
+        }
+
         body.no-scroll {
             overflow: hidden !important;
             /* Just freeze scroll, don't jump */
         }
+        }
+
+        /* Desktop Grid Override (4 Columns) */
+        @media (min-width: 992px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
         }
     </style>
 </head>
@@ -545,75 +570,115 @@
                 </div>
 
                 <div class="testimonial-grid">
-                    <!-- Client 1: Montblanc -->
+                    <!-- 1. Imseeh Jewelry -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Imseeh Jewelry</h4>
+                            <p>Luxury Jewelry</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Montblanc -->
                     <div class="testimonial-card">
                         <div class="client-info">
                             <h4>Montblanc</h4>
-                            <p>Luxury Event</p>
+                            <p>Luxury Brand</p>
                         </div>
                     </div>
 
-                    <!-- Client 2: Arab Bank -->
+                    <!-- 3. Les bon bon -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Les bon bon</h4>
+                            <p>Chocolatier & Events</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Arab Bank -->
                     <div class="testimonial-card">
                         <div class="client-info">
                             <h4>Arab Bank</h4>
-                            <p>Corporate Event</p>
+                            <p>Banking & Finance</p>
                         </div>
                     </div>
 
-                    <!-- Client 3: Master Events -->
-                    <div class="testimonial-card">
-                        <div class="client-info">
-                            <h4>Master Events</h4>
-                            <p>Wedding Planning & Design</p>
-                        </div>
-                    </div>
-
-                    <!-- Client 4: Les Bonbons -->
-                    <div class="testimonial-card">
-                        <div class="client-info">
-                            <h4>Les Bonbons</h4>
-                            <p>Luxury Event</p>
-                        </div>
-                    </div>
-
-                    <!-- Client 5: Tourism Government -->
-                    <div class="testimonial-card">
-                        <div class="client-info">
-                            <h4>Tourism Government</h4>
-                            <p>Government Event</p>
-                        </div>
-                    </div>
-
-                    <!-- Client 6: Music Box Events -->
-                    <div class="testimonial-card">
-                        <div class="client-info">
-                            <h4>Music Box Events</h4>
-                            <p>Corporate Music Event</p>
-                        </div>
-                    </div>
-
-                    <!-- Client 7: Artfully Events -->
+                    <!-- 5. Artfully Events -->
                     <div class="testimonial-card">
                         <div class="client-info">
                             <h4>Artfully Events</h4>
-                            <p>Wedding & Productions</p>
+                            <p>Event Planning</p>
                         </div>
                     </div>
 
-                    <!-- Client 8: Rh Weddings -->
+                    <!-- 6. Tourism Government -->
                     <div class="testimonial-card">
                         <div class="client-info">
-                            <h4>Rh Weddings</h4>
-                            <p>Premium Wedding</p>
+                            <h4>Tourism Government</h4>
+                            <p>Government Entity</p>
                         </div>
                     </div>
 
-                    <!-- Client 9: The Designer Guys -->
+                    <!-- 7. Kia -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Kia</h4>
+                            <p>Automotive</p>
+                        </div>
+                    </div>
+
+                    <!-- 8. The Luxury Network -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>The Luxury Network</h4>
+                            <p>Luxury Liaison</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Master Events -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Master Events</h4>
+                            <p>Event Management</p>
+                        </div>
+                    </div>
+
+                    <!-- 10. The Designer Guys -->
                     <div class="testimonial-card">
                         <div class="client-info">
                             <h4>The Designer Guys</h4>
-                            <p>Event Design & Production</p>
+                            <p>Design & Production</p>
+                        </div>
+                    </div>
+
+                    <!-- 11. Platinumamman -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Platinumamman</h4>
+                            <p>Lifestyle & Events</p>
+                        </div>
+                    </div>
+
+                    <!-- 12. Leyasofficial -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Leyasofficial</h4>
+                            <p>Fashion & Retail</p>
+                        </div>
+                    </div>
+
+                    <!-- 13. Infinity & Nissan Jordan -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>Infinity & Nissan Jordan</h4>
+                            <p>Automotive</p>
+                        </div>
+                    </div>
+
+                    <!-- 14. GEELY JORDAN -->
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <h4>GEELY JORDAN</h4>
+                            <p>Automotive</p>
                         </div>
                     </div>
                 </div>
