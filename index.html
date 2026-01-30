@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=5.3">
+    <link rel="stylesheet" href="style.css?v=5.5">
 
     <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
     <style>
@@ -43,7 +43,7 @@
 
             .splash-content {
                 position: absolute !important;
-                top: 55% !important;
+                top: 60% !important;
                 /* Visual center (lower than math center) */
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
@@ -117,26 +117,29 @@
                 /* Keep heads visible if cropped */
             }
 
+            /* Reset positioning for fixed height container */
             .team-slideshow-container {
-                height: 260px !important;
-                /* Fixed height stops jumping */
-                overflow: hidden !important;
+                height: auto !important;
+                overflow: visible !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 10px !important;
+                justify-content: space-between !important;
             }
 
-            /* Reset positioning for fixed height container */
             .team-simple-slide {
-                width: 49% !important;
-                height: 220px !important;
+                width: 48% !important;
+                height: 250px !important;
                 position: relative !important;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                margin-bottom: 10px !important;
+                opacity: 1 !important;
+                /* Force visible */
+                visibility: visible !important;
             }
 
             .team-simple-slide.active {
-                position: absolute !important;
-                z-index: 2;
+                position: relative !important;
+                /* Override JS active class */
             }
 
             /* 3. Force Side-by-Side Highlights */
