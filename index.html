@@ -17,111 +17,125 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="style.css?v=5.1">
 
     <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
     <style>
         @media (max-width: 768px) {
 
             /* 2. Splash Screen Logo - Flow with Text */
-            #splash-screen {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                height: 100vh !important;
-            }
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            min-height: 100vh !important;
+            /* Fallback */
+            min-height: 100svh !important;
+            /* Modern mobile fix */
+            margin: 0 !important;
+            padding: 0 !important;
+            top: 0 !important;
+        }
 
-            #splash-screen .splash-logo {
-                width: 130px !important;
-                height: auto !important;
-                position: relative !important;
-                /* Flow naturally */
-                top: auto !important;
-                left: auto !important;
-                transform: none !important;
-                margin-bottom: 20px !important;
-                /* Space above text */
-            }
+        .splash-content {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin: 0 !important;
+        }
 
-            .splash-text-wrapper,
-            .splash-content {
-                height: 100vh !important;
-                width: 100vw !important;
-                position: relative !important;
-            }
+        #splash-screen .splash-logo {
+            width: 130px !important;
+            height: auto !important;
+            position: relative !important;
+            /* Flow naturally */
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            margin-bottom: 20px !important;
+            /* Space above text */
+        }
 
-            /* 2. Force Service Modal Size */
-            /* 2. Force Service Modal Size - COMPACT FIX */
-            #service-modal .modal-content {
-                width: 90% !important;
-                padding: 15px !important;
-                /* Minimal padding */
-                max-height: 85vh !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            }
+        .splash-text-wrapper,
+        .splash-content {
+            height: 100vh !important;
+            width: 100vw !important;
+            position: relative !important;
+        }
 
-            #service-modal #modal-title {
-                font-size: 1.1rem !important;
-                /* much smaller */
-                margin-top: 5px !important;
-                margin-bottom: 5px !important;
-            }
+        /* 2. Force Service Modal Size */
+        /* 2. Force Service Modal Size - COMPACT FIX */
+        #service-modal .modal-content {
+            width: 90% !important;
+            padding: 15px !important;
+            /* Minimal padding */
+            max-height: 85vh !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
 
-            #service-modal #modal-description {
-                font-size: 0.8rem !important;
-                /* minimal text size */
-                line-height: 1.4 !important;
-            }
+        #service-modal #modal-title {
+            font-size: 1.1rem !important;
+            /* much smaller */
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+        }
 
-            #service-modal .modal-icon svg {
-                width: 35px !important;
-                /* tiny icon */
-                height: 35px !important;
-            }
+        #service-modal #modal-description {
+            font-size: 0.8rem !important;
+            /* minimal text size */
+            line-height: 1.4 !important;
+        }
 
-            /* 5. Fix Image Mismatch (Fill the Box) - STABLE NO-JUMP FIX */
-            .team-simple-slide img {
-                width: 100% !important;
-                height: 100% !important;
-                /* Fill the fixed container */
-                object-fit: cover !important;
-                /* Fill box completely (no borders) */
-                border-radius: 15px !important;
-                background: transparent !important;
-                object-position: top center !important;
-                /* Keep heads visible if cropped */
-            }
+        #service-modal .modal-icon svg {
+            width: 35px !important;
+            /* tiny icon */
+            height: 35px !important;
+        }
 
-            .team-slideshow-container {
-                height: 260px !important;
-                /* Fixed height stops jumping */
-                overflow: hidden !important;
-            }
+        /* 5. Fix Image Mismatch (Fill the Box) - STABLE NO-JUMP FIX */
+        .team-simple-slide img {
+            width: 100% !important;
+            height: 100% !important;
+            /* Fill the fixed container */
+            object-fit: cover !important;
+            /* Fill box completely (no borders) */
+            border-radius: 15px !important;
+            background: transparent !important;
+            object-position: top center !important;
+            /* Keep heads visible if cropped */
+        }
 
-            /* Reset positioning for fixed height container */
-            .team-simple-slide {
-                width: 49% !important;
-                height: 220px !important;
-                position: relative !important;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
+        .team-slideshow-container {
+            height: 260px !important;
+            /* Fixed height stops jumping */
+            overflow: hidden !important;
+        }
 
-            .team-simple-slide.active {
-                position: absolute !important;
-                z-index: 2;
-            }
-
-            /* 3. Force Side-by-Side Highlights */
-            .slideshow-wrapper {
-                flex-wrap: nowrap !important;
-                gap: 5px !important;
-            }
-
+        /* Reset positioning for fixed height container */
+        .team-simple-slide {
             width: 49% !important;
             height: 220px !important;
+            position: relative !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .team-simple-slide.active {
+            position: absolute !important;
+            z-index: 2;
+        }
+
+        /* 3. Force Side-by-Side Highlights */
+        .slideshow-wrapper {
+            flex-wrap: nowrap !important;
+            gap: 5px !important;
+        }
+
+        width: 49% !important;
+        height: 220px !important;
         }
 
         /* 4. Fix Navigation Flow */
