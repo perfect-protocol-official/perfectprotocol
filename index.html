@@ -138,6 +138,19 @@
             padding: 4px 10px !important;
             margin-left: 0 !important;
         }
+
+        /* 6. Interaction Fixes (No Lag, No Jump) */
+        .service-card {
+            touch-action: manipulation !important;
+            /* Removes 300ms delay */
+            cursor: pointer !important;
+            -webkit-tap-highlight-color: transparent !important;
+        }
+
+        body.no-scroll {
+            overflow: hidden !important;
+            /* Just freeze scroll, don't jump */
+        }
         }
     </style>
 </head>

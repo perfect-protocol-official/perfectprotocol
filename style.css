@@ -1551,3 +1551,8 @@ section {
         transform: translate3d(0, 0, 0);
     }
 }
+
+/* Global utility for modal lock */
+body.no-scroll {
+    overflow: hidden;
+}

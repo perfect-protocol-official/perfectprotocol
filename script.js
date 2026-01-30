@@ -165,21 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalIconContainer.innerHTML = iconHTML;
 
                 // Show Modal
-                // Prevent background scrolling while maintaining position
-                const scrollY = window.scrollY;
-                document.body.style.top = `-${scrollY}px`;
-                document.body.classList.add('no-scroll');
+                // Prevent background scrolling
+                document.body.classList.add('no-scroll'); // Simple overflow: hidden in CSS
                 modalOverlay.classList.add('active');
             });
         });
 
         // Close Modal Function
         const closeModal = () => {
-            const scrollY = document.body.style.top;
             modalOverlay.classList.remove('active');
             document.body.classList.remove('no-scroll');
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            // No need to restore scroll position manually as we aren't using fixed positioning anymore
         };
 
         // Close on Button Click
