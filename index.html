@@ -23,15 +23,17 @@
     <style>
         @media (max-width: 768px) {
 
-            /* 1. Force Splash Logo Center & Size */
-            .splash-logo {
+            /* 2. Splash Screen Logo - Flow with Text */
+            #splash-screen .splash-logo {
                 width: 130px !important;
-                /* Even smaller */
-                position: absolute !important;
-                top: 50% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                margin: 0 !important;
+                height: auto !important;
+                position: relative !important;
+                /* Flow naturally */
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                margin-bottom: 20px !important;
+                /* Space above text */
             }
 
             .splash-text-wrapper,
