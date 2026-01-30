@@ -1359,32 +1359,30 @@ textarea:focus {
 
         /* Mobile Service Modal Fix */
         #service-modal .modal-content {
-            width: 90%;
-            /* Use more screen width but keep margins */
-            padding: 25px 20px;
-            /* Reduce padding */
+            width: 90% !important;
+            /* Force width */
+            padding: 25px 20px !important;
+            /* Force padding */
             max-height: 85vh;
-            /* Prevent overflow */
             overflow-y: auto;
-            /* Scroll if needed */
         }
 
         #service-modal #modal-title {
-            font-size: 1.4rem;
-            /* Smaller Title */
+            font-size: 1.4rem !important;
+            /* Force smaller title */
             margin: 15px 0 10px;
         }
 
         #service-modal #modal-description {
-            font-size: 0.9rem;
-            /* Smaller Text */
+            font-size: 0.9rem !important;
+            /* Force smaller text */
             line-height: 1.5;
         }
 
         #service-modal .modal-icon svg {
-            width: 50px;
-            /* Smaller Icon */
-            height: 50px;
+            width: 50px !important;
+            /* Force smaller icon */
+            height: 50px !important;
         }
     }
 
