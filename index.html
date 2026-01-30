@@ -58,8 +58,19 @@
             }
 
             #service-modal .modal-icon svg {
-                width: 45px !important;
-                height: 45px !important;
+                width: 49% !important;
+                height: 220px !important;
+            }
+
+            /* 5. Fix Image Mismatch (Fill the Box) */
+            .team-simple-slide img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                /* This fixes the size difference */
+                border-radius: 15px !important;
+                max-width: none !important;
+                max-height: none !important;
             }
 
             /* 3. Force Side-by-Side Highlights */
