@@ -68,10 +68,35 @@
                 gap: 5px !important;
             }
 
-            .team-slideshow-container {
-                width: 49% !important;
-                height: 220px !important;
-            }
+            width: 49% !important;
+            height: 220px !important;
+        }
+
+        /* 4. Fix Navigation Flow */
+        .nav-links {
+            flex-wrap: wrap !important;
+            /* Allow two rows */
+            justify-content: center !important;
+            padding-top: 5px !important;
+            gap: 5px !important;
+        }
+
+        .nav-links li {
+            margin: 0 !important;
+        }
+
+        .nav-links a {
+            font-size: 0.65rem !important;
+            /* Readable but small */
+            padding: 4px 6px !important;
+        }
+
+        /* Make "Book Now" stand out but fit */
+        .btn-nav {
+            font-size: 0.65rem !important;
+            padding: 4px 10px !important;
+            margin-left: 0 !important;
+        }
         }
     </style>
 </head>
