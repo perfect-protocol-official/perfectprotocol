@@ -25,16 +25,20 @@
 
             /* 1. Force Splash Logo Center & Size */
             .splash-logo {
-                width: 170px !important;
-                margin: 0 auto !important;
-                display: block !important;
+                width: 130px !important;
+                /* Even smaller */
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                margin: 0 !important;
             }
 
-            .splash-text-wrapper {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                width: 100% !important;
+            .splash-text-wrapper,
+            .splash-content {
+                height: 100vh !important;
+                width: 100vw !important;
+                position: relative !important;
             }
 
             /* 2. Force Service Modal Size */
