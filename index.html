@@ -75,12 +75,12 @@
                 width: 100% !important;
                 height: 100% !important;
                 /* Fill the fixed container */
-                object-fit: contain !important;
-                /* Show whole image, no crop */
+                object-fit: cover !important;
+                /* Fill box completely (no borders) */
                 border-radius: 15px !important;
                 background: transparent !important;
-                object-position: bottom center !important;
-                /* Align to bottom looks best */
+                object-position: top center !important;
+                /* Keep heads visible if cropped */
             }
 
             .team-slideshow-container {
