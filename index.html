@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=6.0">
+    <link rel="stylesheet" href="style.css?v=6.1">
 
     <!-- EMERGENCY MOBILE FIXES (Bypasses Cache) -->
     <style>
@@ -117,29 +117,45 @@
                 /* Keep heads visible if cropped */
             }
 
-            /* Reset positioning for fixed height container */
-            .team-slideshow-container {
-                height: auto !important;
-                overflow: visible !important;
+            /* 3. Dual Slideshow Layout - Side-by-Side Boxes */
+            .slideshow-wrapper {
                 display: flex !important;
-                flex-wrap: wrap !important;
-                gap: 10px !important;
+                flex-wrap: nowrap !important;
+                gap: 15px !important;
                 justify-content: space-between !important;
+                width: 100% !important;
+                overflow: visible !important;
             }
 
-            .team-simple-slide {
+            /* The Container for each slideshow (Left & Right) */
+            .team-slideshow-container {
                 width: 48% !important;
-                height: 250px !important;
+                height: 350px !important;
+                /* Fixed height for matching boxes */
                 position: relative !important;
-                margin-bottom: 10px !important;
-                opacity: 1 !important;
-                /* Force visible */
+                overflow: hidden !important;
+                display: block !important;
+                border-radius: 15px !important;
+            }
+
+            /* The Individual Images (Stacked for Fading) */
+            .team-simple-slide {
+                width: 100% !important;
+                height: 100% !important;
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                opacity: 0 !important;
+                transition: opacity 1.5s ease-in-out !important;
+                z-index: 1;
+                margin: 0 !important;
+                /* Reset margin from previous grid fix */
                 visibility: visible !important;
             }
 
             .team-simple-slide.active {
-                position: relative !important;
-                /* Override JS active class */
+                opacity: 1 !important;
+                z-index: 2;
             }
 
             /* 3. Force Side-by-Side Highlights */
