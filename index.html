@@ -91,7 +91,9 @@
 
             /* Reset positioning for fixed height container */
             .team-simple-slide {
-                position: absolute !important;
+                width: 49% !important;
+                height: 220px !important;
+                position: relative !important;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -147,6 +149,17 @@
             -webkit-tap-highlight-color: transparent !important;
         }
 
+        /* Splash Text Mobile */
+        .splash-text {
+            font-size: 1.5rem !important;
+            letter-spacing: 0.2rem !important;
+        }
+
+        .splash-subtext {
+            font-size: 1.1rem !important;
+            letter-spacing: 0.1rem !important;
+        }
+
         body.no-scroll {
             overflow: hidden !important;
             /* Just freeze scroll, don't jump */
@@ -160,7 +173,10 @@
     <div id="splash-screen">
         <div class="splash-content">
             <div class="splash-text-wrapper">
-                <img src="assets/logo-white.png" alt="Perfect Protocol" class="splash-logo">
+                <img src="assets/logo-white.png" alt="Perfect Protocol Logo" class="splash-logo">
+                <h1 class="splash-text">PERFECT PROTOCOL</h1>
+                <div class="splash-line"></div>
+                <p class="splash-subtext">WE RUN THE SHOW</p>
             </div>
         </div>
     </div>
