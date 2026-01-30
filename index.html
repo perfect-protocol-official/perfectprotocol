@@ -62,15 +62,35 @@
                 height: 220px !important;
             }
 
-            /* 5. Fix Image Mismatch (Fill the Box) - REVERTED to Contain but filling height */
+            /* 5. Fix Image Mismatch (Fill the Box) - Dynamic Height Fix */
             .team-simple-slide img {
                 width: 100% !important;
-                height: 100% !important;
+                height: auto !important;
+                /* Allow natural height */
                 object-fit: contain !important;
-                /* Revert to contain so full image shows */
                 border-radius: 15px !important;
-                background: #000;
-                /* distinct background for letterboxing */
+                background: transparent !important;
+                /* Remove black bg */
+                display: block !important;
+            }
+
+            .team-slideshow-container {
+                height: auto !important;
+                /* Remove fixed height constraint */
+                min-height: 100px;
+                overflow: hidden !important;
+            }
+
+            /* Make the active slide exist in flow so container has height */
+            .team-simple-slide.active {
+                position: relative !important;
+                height: auto !important;
+            }
+
+            .team-simple-slide:not(.active) {
+                position: absolute !important;
+                top: 0;
+                width: 100%;
             }
 
             /* 3. Force Side-by-Side Highlights */
