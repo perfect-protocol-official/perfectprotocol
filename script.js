@@ -126,22 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Team Slideshow (Simple Auto-Play) ---
-    const teamSlides = document.querySelectorAll('.team-simple-slide');
-    let currentTeamSlide = 0;
+    // --- Team Slideshow (Simple Auto-Play) ---
+    const slideshowContainers = document.querySelectorAll('.team-slideshow-container');
     const teamIntervalTime = 3000; // 3 seconds per slide
 
-    if (teamSlides.length > 0) {
-        setInterval(() => {
-            // Remove active from current
-            teamSlides[currentTeamSlide].classList.remove('active');
+    slideshowContainers.forEach(container => {
+        const slides = container.querySelectorAll('.team-simple-slide');
+        let currentSlide = 0;
 
-            // Move to next
-            currentTeamSlide = (currentTeamSlide + 1) % teamSlides.length;
-
-            // Add active to next
-            teamSlides[currentTeamSlide].classList.add('active');
-        }, teamIntervalTime);
-    }
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, teamIntervalTime);
+        }
+    });
 
 
     // --- Service Description Modal ---
