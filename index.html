@@ -62,15 +62,15 @@
                 height: 220px !important;
             }
 
-            /* 5. Fix Image Mismatch (Fill the Box) */
+            /* 5. Fix Image Mismatch (Fill the Box) - REVERTED to Contain but filling height */
             .team-simple-slide img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: cover !important;
-                /* This fixes the size difference */
+                object-fit: contain !important;
+                /* Revert to contain so full image shows */
                 border-radius: 15px !important;
-                max-width: none !important;
-                max-height: none !important;
+                background: #000;
+                /* distinct background for letterboxing */
             }
 
             /* 3. Force Side-by-Side Highlights */
@@ -191,10 +191,16 @@
 
                 <!-- Simple Auto-Playing Slideshow -->
                 <div class="slideshow-wrapper">
-                    <!-- Left Slideshow -->
+                    <!-- Left Slideshow (Sorted: Tall -> Wide) -->
                     <div class="team-slideshow-container left-slideshow">
                         <div class="team-simple-slide active">
                             <img src="assets/highlight-2.jpg" alt="Highlight 2">
+                        </div>
+                        <div class="team-simple-slide">
+                            <img src="assets/highlight-6.jpg" alt="Highlight 6">
+                        </div>
+                        <div class="team-simple-slide">
+                            <img src="assets/highlight-5.jpg" alt="Highlight 5">
                         </div>
                         <div class="team-simple-slide">
                             <img src="assets/highlight-7.jpg" alt="Highlight 7">
@@ -202,30 +208,24 @@
                         <div class="team-simple-slide">
                             <img src="assets/highlight-8.png" alt="Highlight 8">
                         </div>
+                    </div>
+
+                    <!-- Right Slideshow (Sorted: Tall -> Wide) -->
+                    <div class="team-slideshow-container right-slideshow">
+                        <div class="team-simple-slide active">
+                            <img src="assets/highlight-10.jpg" alt="Highlight 10">
+                        </div>
                         <div class="team-simple-slide">
                             <img src="assets/highlight-3.jpg" alt="Highlight 3">
                         </div>
                         <div class="team-simple-slide">
-                            <img src="assets/highlight-5.jpg" alt="Highlight 5">
-                        </div>
-                    </div>
-
-                    <!-- Right Slideshow -->
-                    <div class="team-slideshow-container right-slideshow">
-                        <div class="team-simple-slide active">
-                            <img src="assets/highlight-10.jpg" alt="Highlight 10">
+                            <img src="assets/highlight-4.jpg" alt="Highlight 4">
                         </div>
                         <div class="team-simple-slide">
                             <img src="assets/highlight-9.png" alt="Highlight 9">
                         </div>
                         <div class="team-simple-slide">
                             <img src="assets/highlight-1.jpg" alt="Highlight 1">
-                        </div>
-                        <div class="team-simple-slide">
-                            <img src="assets/highlight-4.jpg" alt="Highlight 4">
-                        </div>
-                        <div class="team-simple-slide">
-                            <img src="assets/highlight-6.jpg" alt="Highlight 6">
                         </div>
                     </div>
                 </div>
