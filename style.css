@@ -1322,91 +1322,100 @@ textarea:focus {
     .section-title-text {
         font-size: 2rem;
         letter-spacing: 0.2rem;
-
-        .about-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Mobile Highlights (Side-by-Side) */
-        .slideshow-wrapper {
-            flex-wrap: nowrap;
-            /* Prevent stacking */
-            gap: 10px;
-            /* Smaller gap */
-            align-items: flex-start;
-            /* Align to top */
-        }
-
-        .team-slideshow-container {
-            width: 48%;
-            /* Fit two in a row */
-            max-width: none;
-            /* Smaller height for mobile */
-        }
-
-        /* Mobile Splash Logo Fix */
-        .splash-logo {
-            width: 170px;
-            /* Smaller specifically for mobile */
-            margin: 0 auto;
-            display: block;
-        }
-
-        .splash-text-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Mobile Service Modal Fix */
-        #service-modal .modal-content {
-            width: 90% !important;
-            /* Force width */
-            padding: 25px 20px !important;
-            /* Force padding */
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-
-        #service-modal #modal-title {
-            font-size: 1.4rem !important;
-            /* Force smaller title */
-            margin: 15px 0 10px;
-        }
-
-        #service-modal #modal-description {
-            font-size: 0.9rem !important;
-            /* Force smaller text */
-            line-height: 1.5;
-        }
-
-        #service-modal .modal-icon svg {
-            width: 50px !important;
-            /* Force smaller icon */
-            height: 50px !important;
-        }
-    }
-
-    .section-subtitle {
-        font-size: 1.1rem;
-    }
-
-    /* About Us Mobile Optimization */
-    .about-content {
-        padding: 0 10px;
-    }
-
-    .about-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
     }
 
     .about-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.9rem !important;
+        /* Smaller, slicker font */
+        line-height: 1.8 !important;
+        /* More breathing room */
+        font-weight: 300 !important;
+        /* Lighter weight */
+        color: rgba(255, 255, 255, 0.85) !important;
+        padding: 0 10px;
+        text-align: center;
+        /* Keep centered but cleaner */
     }
+
+    /* Mobile Highlights (Side-by-Side) */
+    .slideshow-wrapper {
+        flex-wrap: nowrap;
+        /* Prevent stacking */
+        gap: 10px;
+        /* Smaller gap */
+        align-items: flex-start;
+        /* Align to top */
+    }
+
+    .team-slideshow-container {
+        width: 48%;
+        /* Fit two in a row */
+        max-width: none;
+        /* Smaller height for mobile */
+    }
+
+    /* Mobile Splash Logo Fix */
+    .splash-logo {
+        width: 170px;
+        /* Smaller specifically for mobile */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .splash-text-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Mobile Service Modal Fix */
+    #service-modal .modal-content {
+        width: 90% !important;
+        /* Force width */
+        padding: 25px 20px !important;
+        /* Force padding */
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    #service-modal #modal-title {
+        font-size: 1.4rem !important;
+        /* Force smaller title */
+        margin: 15px 0 10px;
+    }
+
+    #service-modal #modal-description {
+        font-size: 0.9rem !important;
+        /* Force smaller text */
+        line-height: 1.5;
+    }
+
+    #service-modal .modal-icon svg {
+        width: 50px !important;
+        /* Force smaller icon */
+        height: 50px !important;
+    }
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+}
+
+/* About Us Mobile Optimization */
+.about-content {
+    padding: 0 10px;
+}
+
+.about-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
 }
 
 /* About Us Section Base Styles */
