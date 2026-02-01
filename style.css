@@ -1325,16 +1325,22 @@ textarea:focus {
     }
 
     .about-text {
-        font-size: 0.9rem !important;
-        /* Smaller, slicker font */
-        line-height: 1.8 !important;
-        /* More breathing room */
+        font-size: 0.85rem !important;
+        /* Slightly smaller */
+        line-height: 1.6 !important;
+        /* Tighter spacing */
         font-weight: 300 !important;
-        /* Lighter weight */
         color: rgba(255, 255, 255, 0.85) !important;
-        padding: 0 10px;
+        padding: 0 15px;
+        /* More side padding to squeeze text slightly */
+        margin-bottom: 15px;
+        /* Space between paragraphs */
         text-align: center;
-        /* Keep centered but cleaner */
+    }
+
+    /* Remove bottom margin from last paragraph */
+    .about-text:last-child {
+        margin-bottom: 0;
     }
 
     /* Mobile Highlights (Side-by-Side) */
@@ -1396,26 +1402,21 @@ textarea:focus {
         /* Force smaller icon */
         height: 50px !important;
     }
-}
 
-.section-subtitle {
-    font-size: 1.1rem;
-}
+    /* Merged orphaned mobile styles */
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
 
-/* About Us Mobile Optimization */
-.about-content {
-    padding: 0 10px;
-}
+    /* About Us Mobile Optimization */
+    .about-content {
+        padding: 0 10px;
+    }
 
-.about-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.about-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
+    .about-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
 }
 
 /* About Us Section Base Styles */
