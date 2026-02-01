@@ -1057,7 +1057,7 @@ textarea:focus {
 }
 
 .footer-logo-seamless {
-    height: 45px;
+    height: 90px;
     margin-bottom: 15px;
     mix-blend-mode: screen;
     opacity: 0.85;
@@ -1076,6 +1076,13 @@ textarea:focus {
     gap: 30px;
     margin-bottom: 30px;
 }
+
+.footer-logo-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
 
 .footer-links li {
     margin-bottom: 10px;
