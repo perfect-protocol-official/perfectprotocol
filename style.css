@@ -696,6 +696,13 @@ img {
     margin: 0 auto;
 }
 
+/* Center the last service card (Bride Assistant) when it's the orphan on the last row */
+@media (min-width: 900px) {
+    .service-card:last-child {
+        grid-column: 2;
+    }
+}
+
 .service-card {
     background: var(--color-glass);
     padding: 15px;
@@ -724,14 +731,16 @@ img {
     transition: opacity 0.4s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: #fff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
+@media (hover: hover) {
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-color: #fff;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
 
-.service-card:hover::before {
-    opacity: 1;
+    .service-card:hover::before {
+        opacity: 1;
+    }
 }
 
 .service-icon {
@@ -745,8 +754,10 @@ img {
     height: 32px;
 }
 
-.service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
+@media (hover: hover) {
+    .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
 }
 
 .service-card h3 {
@@ -781,9 +792,11 @@ img {
     transition: all 0.3s ease;
 }
 
-.service-card:hover::after {
-    color: #fff;
-    transform: rotate(90deg);
+@media (hover: hover) {
+    .service-card:hover::after {
+        color: #fff;
+        transform: rotate(90deg);
+    }
 }
 
 /* Modal Styles */
@@ -1063,6 +1076,24 @@ textarea:focus {
 }
 
 
+/* Logo Brand Text (Desktop) */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
 
@@ -1070,6 +1101,12 @@ textarea:focus {
     .logo {
         display: none;
     }
+
+    .logo-text {
+        display: none;
+    }
+
+
 
     .hamburger {
         display: none;
