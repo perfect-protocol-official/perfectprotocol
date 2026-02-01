@@ -378,13 +378,32 @@ img {
     transform: translateY(-100%);
 }
 
+#navbar .logo {
+    display: flex;
+    /* Force side-by-side layout */
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #navbar .logo img {
-    height: 70px;
+    height: 50px;
+    /* Reduced from 70px to fit text */
     width: auto;
     transition: transform 0.3s ease;
     opacity: 0.85;
     mix-blend-mode: screen;
     filter: brightness(1.2);
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #navbar .logo img:hover {
@@ -1076,29 +1095,7 @@ textarea:focus {
 }
 
 
-/* Logo Brand Text (Desktop) */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.logo img {
-    height: 50px;
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
 
 /* Media Queries */
 @media (max-width: 768px) {
