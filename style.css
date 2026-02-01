@@ -639,13 +639,13 @@ img {
 .team-slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    /* Adjusted to fit two side-by-side */
-    height: 500px;
-    /* Slightly smaller height for balance */
+    max-width: 400px;
+    /* Adjusted to fit portrait ratio tighter */
+    height: 700px;
+    /* Taller to fit portrait images */
     margin: 0 auto;
-    overflow: hidden;
-    /* Removed border and shadow */
+    overflow: visible;
+    /* Allow header/shadow to be seen if needed */
     background: transparent;
 }
 
@@ -671,20 +671,19 @@ img {
 
 .team-simple-slide img {
     width: auto;
-    /* Allow auto width */
     height: auto;
-    /* Allow auto height */
     max-width: 100%;
-    /* Constrain to container */
     max-height: 100%;
-    /* Constrain to container */
     object-fit: contain;
-    border-radius: 20px;
-    /* Round corners of the image */
-    border: 1px solid var(--color-glass-border);
-    /* Add border to image */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    /* Add shadow to image */
+    /* Redundant with auto sizing but safe */
+    object-position: center;
+    border-radius: 25px;
+    /* Smooth rounded corners on the image itself */
+    border: none;
+    background: transparent;
+    /* Ensure no background color leaks */
+    box-shadow: none;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 
@@ -1568,4 +1567,175 @@ section {
 /* Global utility for modal lock */
 body.no-scroll {
     overflow: hidden;
+}
+
+/* =========================================
+   MOBILE OPTIMIZATIONS (Refactored from Emergency Fixes)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 2. Splash Screen - Perfect Center */
+    #splash-screen {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 10000 !important;
+    }
+
+    .splash-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #splash-screen .splash-logo {
+        width: 130px;
+        height: auto;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    .splash-text-wrapper,
+    .splash-content {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+
+    /* 2. Force Service Modal Size - COMPACT FIX */
+    #service-modal .modal-content {
+        width: 90%;
+        padding: 15px;
+        max-height: 85vh;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #service-modal #modal-title {
+        font-size: 1.1rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #service-modal #modal-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    #service-modal .modal-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* 5. Fix Image Mismatch (Fill the Box) - STABLE NO-JUMP FIX */
+    .team-simple-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        background: transparent;
+        object-position: top center;
+    }
+
+
+    /* 4. Fix Navigation Flow */
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 5px;
+        gap: 5px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+        padding: 4px 6px;
+    }
+
+    /* Make "Book Now" stand out but fit */
+    .btn-nav {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+        margin-left: 0;
+    }
+
+    /* 6. Interaction Fixes (No Lag, No Jump) */
+    .service-card {
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Splash Text Mobile */
+    .splash-text {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .splash-subtext {
+        font-size: 1.1rem;
+        letter-spacing: 0.1rem;
+    }
+
+    /* 4. Top Clients Grid - Mobile Optimization (2 Columns) */
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+
+    .testimonial-card {
+        padding: 15px 10px;
+    }
+
+    .testimonial-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card h4.long-name {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+
+    .testimonial-card p {
+        font-size: 0.7rem;
+    }
+
+    body.no-scroll {
+        overflow: hidden !important;
+    }
+}
+
+/* Desktop Grid Override (4 Columns) */
+@media (min-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .testimonial-card h4.long-name {
+        font-size: 1.1rem;
+    }
 }
